@@ -12,7 +12,7 @@ body {
 
 
 header {
-    background-image: url("./img/car-bg.jpg");
+    background-image: url("./img/women2.jpg");
     background-size: cover;
     background-position: center center;
     color: white;
@@ -27,6 +27,7 @@ header {
 .content {
     font-size : 2rem;
     margin: auto ;
+    max-width: 100%;
 
 }
 
@@ -35,7 +36,16 @@ header {
     margin-bottom: 0;
 }
 
+.mycontainer {
+    padding: 10rem;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1000px;
+    
+}
+
 .container {
+    padding: 1rem;
     margin: 0 auto;
     max-width: 100%;
     width: 1000px;
@@ -44,12 +54,12 @@ header {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 1rem 0;
 
 }
 
 nav .logo {
-    font-size: 2rem;
+    font-size: 2.5rem;
     
 
 }
@@ -84,7 +94,7 @@ nav li a {
 footer {
     background-color: #000;
     color: #fff;
-    height: 100px;
+    /* height: 100px; */
     padding: 1rem;
 
 }
@@ -101,6 +111,35 @@ footer strong {
     color: #00c2ff;
 }
 
-/* footer p {
-    margin: 0;
-} */
+
+@media screen and (max-width: 700px ) {
+    nav ul  {
+        flex-direction: column;
+    }
+    nav li:not(:last-child) {
+        margin-bottom: 1rem;
+        
+    }
+
+    nav .highlight {
+        display: none;
+    }
+
+   footer {
+       height: auto;
+   }
+
+    footer ul {
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+
+     footer li  {
+        margin: 1rem;
+        text-align: center;
+    }
+    
+
+}
