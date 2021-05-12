@@ -12,7 +12,7 @@ body {
 
 
 header {
-    background-image: url("./img/women2.jpg");
+    background-image: url("./img/mustang.jpg");
     background-size: cover;
     background-position: center center;
     color: white;
@@ -113,6 +113,13 @@ footer strong {
 
 
 @media screen and (max-width: 700px ) {
+    .content {
+        font-size: 1.4rem;
+        margin: 2rem auto 0;
+        color: white;
+
+    }
+
     nav ul  {
         flex-direction: column;
     }
