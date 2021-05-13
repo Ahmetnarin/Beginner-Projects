@@ -53,14 +53,69 @@ a {
   margin: 0;
 }
 
-.corousel {
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 60vh;
+  margin-top: 4rem;
+}
+
+.carousel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(0);
+  display: flex;
 
 }
 
 .slide {
+  width: 100vw;
+  text-align: center;
+  
 
 }
 
 .slide img {
+  object-fit: cover;
+  height: 400px;
+  width: 400px;
   
+
+}
+
+
+.slide h1 {
+  color: white;
+  font-size: 4rem;
+  margin-top: 0.5rem;
+}
+
+.slide a {
+  background-color: #40020e;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+}
+
+.arrow {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  font-size: 5rem;
+  color: black;
+  opacity: 0.5;
+}
+
+.left-arrow {
+  left: 2rem;
+
+}
+
+.right-arrow {
+  right:2rem;
+
 }
