@@ -44,6 +44,11 @@ nav {
     font-weight: bold;
     font-size: 2.5rem;
 }
+.soru {
+    color: #fff;
+    font-family: cursive;
+
+}
 
 nav ul {
     display: flex;
@@ -122,6 +127,12 @@ nav a:hover {
         flex-direction: column;
         justify-content: center;
     }
+
+    nav ul {
+        flex-direction: column;
+        /* nav daki segmeleri alt alta gösterir */
+    }
+
 
     .content {
         font-size: 1.5rem;
