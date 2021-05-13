@@ -94,8 +94,9 @@ a {
 
 .slide a {
   background-color: #40020e;
-  padding: 1rem 2rem;
+  padding: 0 1rem;
   font-size: 1.5rem;
+  /* margin-top: auto; */
 }
 
 .arrow {
