@@ -1,3 +1,5 @@
+// THIS CODE IS JUST FOR TESTING  
+
 // const password = prompt("please enter a new password");
 
 // if (password.length >= 6) {
@@ -102,8 +104,129 @@
 //     console.log(Math.pow(number,2));
 // }
 
-multiply(2,5);
-function multiply(a , b)
-{
-    console.log(a * b) ;
-}
+// multiply(2,5);
+// function multiply(a , b)
+// {
+//     console.log(a * b) ;
+// }
+
+
+// function rant(message) {
+//     console.log(message.toUpperCase());
+//     console.log(message.toUpperCase());
+//     console.log(message.toUpperCase());
+
+// }
+
+// rant("I hate beets")w
+
+// function greet(firstName, lastName){
+//     console.log(`Hey there, ${firstName}`);
+// }
+
+// greet('Clooney', 'George');
+// function isSnakeEyes(first, second) {
+
+//     if (first === 1 && second === 1) {
+//         console.log('Snake eyes');
+//     } else {
+//         console.log('Not Snake eyes');
+//     }
+// }
+
+// isSnakeEyes(1,1);
+// isSnakeEyes(2,2);
+// isSnakeEyes(1,2);
+// isSnakeEyes(2,1);
+// isSnakeEyes(5,6);
+// isSnakeEyes(6,6);
+
+// function lastelement(arr){
+//     if(arr !== 0){
+//         let lastel = arr.length;
+//         return lastel;
+//     }
+// }
+
+// lastelement([1,2,3]);
+// Capitilize first element
+
+// let str = "eggplant";
+// let new_str = str;
+// console.log(str[0].toUpperCase() + str.slice(1));
+
+// function capitalize(str){
+//     // return str.charAt(0).toUpperCase() + str.slice(1);
+//     let new_str = str;
+//     console.log(str[0].toUpperCase() + str.slice(1));
+// }
+
+// function sumArray(arr) {
+//     for (let i = 0; i <= arr.length; i++) {
+
+//     }
+// }
+
+// let arr = [1,2,3,6];
+
+
+// function sumArray(arr){
+//     let sum = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//     }
+//     return sum;
+// }
+
+// console.log(!arr.length);
+// console.log(arr[arr.length - 1]);
+
+// function lastElement(arr) {
+//     if (arr.length === null) {
+//         return null;
+//     }else if (!arr.length || arr !== null) {
+//         // let last_element = arr[arr.length-1];
+//         return arr[arr.length - 1];
+//     }
+// }
+
+// console.log(lastElement([3, 5, 7]));
+// console.log(lastElement([1]));
+// console.log(lastElement([]));
+// arr= [1,2,3,6]
+// console.log(!arr.length);
+
+
+// // DEFINE YOUR FUNCTION BELOW:
+// function returnDay(day) {
+//     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+//     if (day > 7 || day < 1) {
+//         console.log("It is not valid!")
+//         return null;
+//     } else if (day === 1) {
+//         console.log(days[0]);
+    
+//     }else if (day === 2) {
+//         console.log(days[1]);
+    
+//     }else if (day === 3) {
+//         console.log(days[2]);
+//     }else if (day === 4) {
+//         console.log(days[3]);
+    
+//     }else if (day === 5) {
+//         console.log(days[4]);
+    
+//     }else if (day === 6) {
+//         console.log(days[5]);
+    
+//     }else if (day === 7) {
+//         console.log(days[6]); 
+//     }
+
+// }
+
+// returnDay(1);
+// returnDay(7);
+// returnDay(4);
+// returnDay(0);
