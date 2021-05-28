@@ -21,7 +21,45 @@ body {
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 4rem;
   color: #764400;
-  margin: 0;
+  
+}
+
+h1 {
+  color: #764400;
+  display: flex;
+  font-size: 4rem;
+  margin : 0;
+  justify-content: space-between;
+  text-align: center;
+  /* justify-content: space-between;
+  text-align: center; */
+}
+
+h1 a {
+  transform: scale(0.8);
+}
+
+a {
+  display: inline-block;
+  color: white;
+  position: relative;
+  padding: 1rem 2rem; 
+  text-decoration: none;
+  
+}
+
+a::after {
+  background-color: #764400;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: skew(-30deg);
+  z-index: -1;
+  
+
 }
