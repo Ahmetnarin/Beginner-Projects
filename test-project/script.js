@@ -199,34 +199,308 @@
 
 // // DEFINE YOUR FUNCTION BELOW:
 // function returnDay(day) {
-//     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-//     if (day > 7 || day < 1) {
-//         console.log("It is not valid!")
+//     const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+//     if(day < 1 || day > 7 ) {
 //         return null;
 //     } else if (day === 1) {
 //         console.log(days[0]);
-    
 //     }else if (day === 2) {
 //         console.log(days[1]);
-    
 //     }else if (day === 3) {
 //         console.log(days[2]);
 //     }else if (day === 4) {
 //         console.log(days[3]);
-    
 //     }else if (day === 5) {
 //         console.log(days[4]);
-    
 //     }else if (day === 6) {
 //         console.log(days[5]);
-    
 //     }else if (day === 7) {
 //         console.log(days[6]); 
 //     }
 
 // }
 
-// returnDay(1);
-// returnDay(7);
-// returnDay(4);
-// returnDay(0);
+
+
+// function returnDay(day){
+//     const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+//     if(days<1 || days>7){
+//         return null;
+//     }else {
+
+//         return day[days];
+//     }
+// }
+
+// const daysOfWeek = {
+//     1: 'Monday',
+//     2: 'Tuesday',
+//     3: 'Wednesday',
+//     4: 'Thursday',
+//     5: 'Friday',
+//     6: 'Saturday',
+//     7: 'Sunday'
+// };
+
+// function returnDay(d) {
+//     if (d < 1 || d > 7)
+//         return null;
+
+//     else (d in daysOfWeek); {
+//         return daysOfWeek[d]
+//     }
+// }
+
+// console.log(returnDay(1));
+// console.log(returnDay(2));
+// console.log(returnDay(4));
+// console.log(returnDay(6));
+// console.log(returnDay(4));
+
+// const cat = {
+//     name: 'Blue Steele',
+//     color: 'grey',
+//     breed: 'scotish fold',
+//     meow() {
+//         console.log(`${this.name} says MEEOOOW`)
+//     }
+// }
+
+// const hen = {
+//     name: 'Helen',
+//     eggCount: 0,
+//     layAnEgg() {
+//         eggCount += 1;
+//         return this.eggCount;
+//     }
+// }
+
+// try {
+//     hello.toUpperCase();
+// }catch {
+//     console.log("ERROR!!!")
+// }
+
+// "hello".toUpperCase();
+
+// console.log("AFTER!")
+
+// function yell(msg){
+//     try {
+//         console.log(msg.toUpperCase().repeat(3));
+//     } catch (e) {
+//         console.log(e);
+//         console.log("Please type a string!!");
+//     }
+// }
+
+// const texts = ['rofl', 'lol', 'omg', 'ttyl'];
+// const caps= texts.map(function (t){
+//     return t.toUpperCase();
+// })
+
+// const numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+
+// const doubles = numbers.map(function (num) {
+//     return num * 2;
+// } )
+
+// function cleanNames(arr) {
+//     const clean = arr.map(function (t) {
+//         return t.trim();
+//     });
+//     return clean;
+// }
+
+// console.log(cleanNames(["      Ahmet ", "   afijfjsdfsdjofpsdfksdofps     "  , "                           fdsfsd                   "]));
+
+const movies = [
+    {
+        title: 'Amadeus',
+        score: 99,
+        year: 1991
+
+    },
+    {
+        title: 'Stand By Me',
+        score: 45,
+        year: 1992
+    },
+    {
+        title: 'Parasite',
+        score: 95 ,
+        year: 1993
+    },
+    {
+        title: 'Nothin Hill',
+        score: 65,
+        year: 1994
+
+    },
+    {
+        title: 'Malkocoglu',
+        score: 100,
+        year: 1995
+    },
+    {
+        title: 'Cagri',
+        score: 95 ,
+        year: 1996
+    },
+    {
+        title: 'Alien',
+        score: 15,
+        year: 1997
+    }
+]
+
+const highesRated = movies.reduce((bestMovie,currmovie) =>{
+    if (currmovie.score > bestMovie.score){
+        return currmovie;
+    }
+    return bestMovie;
+})
+
+const even = [2,4,6,8];
+const mytotal = even.reduce((sum,num) => sum+num);
+
+// const good_movies = movies.filter(m => {return m.score > 80;});
+// const goodTitle = good_movies.map(m => m.title )
+// const bad_movies = movies.filter(m => {return m.score < 70;});
+// const recent_movies = movies.filter(m => {return m.year > 1995;});
+
+// let validUserNames = (['mark', 'staceysmom1978', 'q25615615315616', 'carrie98', 'Ahmet3838']);
+
+// // const lessthan10 = validUserNames.filter(str => {return str.length <=  10});
+
+// const lessthan10 = validUserNames.filter(function (name) {
+//     return name.length < 10;
+// })
+
+// const new_movies = movies.map(function(movie){
+//     return `${movie.title} - ${movie.score / 10 }`;
+// })
+
+// const add = (x,y) => {
+//     return x+y;
+// }
+
+// const greet = (str) => {
+//     return `Hey ${str}!`
+// }
+// greet("Ahmet")
+
+// const add = (a,b) => a+b
+
+// console.log("Hellooo-....!");
+
+// setTimeout(() => {
+//     console.log("...are you still there?")
+// }, 3000)
+
+// console.log("GOODBYE!!")
+
+// const id = setInterval(()=> {
+//     console.log(Math.random())
+// }, 2000)
+
+
+const arr = [80,98,92,20,77,90,89,84,81,77];
+
+// // const sol = exams.some(score => score <= 20);
+
+// function allEvens(arr) {
+//     const evennumbers = arr.every(number => (number % 2) === 0);
+//     return evennumbers;
+// }
+
+
+// function check(arr)
+// {
+//     for(number in arr)
+//     {
+//         if((number % 2) ===  0){
+//             // console.log(`${arr[number]} is a even number`);
+//             return arr[number]=true;
+//         } else {
+//             // console.log(`${arr[number]} is a odd number`);
+//             return arr[number]=false;
+//         }
+//     }
+// }
+
+const total = arr.reduce((total , arr) => {
+    return total + arr
+} )
+
+
+const person = {
+    firstname: "Vigo",
+    lastname: 'Mortensen',
+    fullname: function() {
+        return `${this.firstname} ${this.lastname}`;
+    }
+}
+
+
+function rollDie(number) {
+    return Math.floor(Math.random() * number) + 1;
+}
+
+const cats = ['blue', 'scout', 'rocket'];
+const dogs = ['Rusty', 'Wyatt'];
+
+const allpets = [...cats , ...dogs];
+
+const feline = {legs:4, family:'Felidae'};
+const canine = {isfurry: true, family: "canine"}
+
+
+// spread with object
+const dataFromForm = {
+    email: 'blueman@gmail.com',
+    password: 'tobias123!',
+    username: 'tfunke',
+}
+
+const newUser = {...dataFromForm, id:2345, isAdmin: false
+};
+
+// to add numbers in array 
+function sum(...nums){
+    return nums.reduce((total, el) => total + el);
+}
+
+function raceResult(gold,silver, ...everyOneElse){
+    console.log(`Gold medals goes to : ${gold}`);
+    console.log(`Silver medals goes to : ${silver}`);
+    console.log(`And thanks everyone else : ${everyOneElse}`);
+
+}
+
+
+// Destructing objects
+
+const user = {
+    email: 'harvey@gmail.com',
+    password: 'sjhicapcadf',
+    firstName: 'Harvey',
+    lastName: 'Milk',
+    born: 1930,
+    died: 1978,
+    bio: 'Harvey Bernard Milk was an American politician',
+    city: 'San Fransisco',
+    state: 'California'
+}
+
+const firstName = user.firstName;
+const lastName = user.lastName;
+
+const { email } = user;
+
+const high = movies.filter((movie) => movie.score >= 90);
+
+movies.map(movie=> {
+    return `${movie.title} (${movie.year}) is rated ${movie.score}`;
+})
