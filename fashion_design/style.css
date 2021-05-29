@@ -11,7 +11,8 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   font-style: italic;
-  /* min-height: 100vh; */
+  min-height: 100vh;
+  padding-top: 2rem;
 }
 
 .container {
@@ -35,7 +36,7 @@ h1 {
   align-items: center;
 }
 
-h1 a{
+h1 a {
   transform: scale(0.6);
 }
 
@@ -61,10 +62,14 @@ a::after {
 
 .row {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .col {
   flex: 1;
+  /* padding: 2rem; */
 }
 
 .text {
@@ -77,5 +82,19 @@ a::after {
 
 img {
   margin: 3rem 0;
-  box-shadow: 15px 15px #A66000;
+  box-shadow: 15px 15px #a66000;
 }
+
+.block {
+  font-size: 3rem;
+  display: block;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .col:first-child {
+    margin-right: 0;
+  }
+}
+
+/* 1:52:51 */

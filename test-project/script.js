@@ -315,55 +315,55 @@
 
 // console.log(cleanNames(["      Ahmet ", "   afijfjsdfsdjofpsdfksdofps     "  , "                           fdsfsd                   "]));
 
-const movies = [
-    {
-        title: 'Amadeus',
-        score: 99,
-        year: 1991
+// const movies = [
+//     {
+//         title: 'Amadeus',
+//         score: 99,
+//         year: 1991
 
-    },
-    {
-        title: 'Stand By Me',
-        score: 45,
-        year: 1992
-    },
-    {
-        title: 'Parasite',
-        score: 95 ,
-        year: 1993
-    },
-    {
-        title: 'Nothin Hill',
-        score: 65,
-        year: 1994
+//     },
+//     {
+//         title: 'Stand By Me',
+//         score: 45,
+//         year: 1992
+//     },
+//     {
+//         title: 'Parasite',
+//         score: 95 ,
+//         year: 1993
+//     },
+//     {
+//         title: 'Nothin Hill',
+//         score: 65,
+//         year: 1994
 
-    },
-    {
-        title: 'Malkocoglu',
-        score: 100,
-        year: 1995
-    },
-    {
-        title: 'Cagri',
-        score: 95 ,
-        year: 1996
-    },
-    {
-        title: 'Alien',
-        score: 15,
-        year: 1997
-    }
-]
+//     },
+//     {
+//         title: 'Malkocoglu',
+//         score: 100,
+//         year: 1995
+//     },
+//     {
+//         title: 'Cagri',
+//         score: 95 ,
+//         year: 1996
+//     },
+//     {
+//         title: 'Alien',
+//         score: 15,
+//         year: 1997
+//     }
+// ]
 
-const highesRated = movies.reduce((bestMovie,currmovie) =>{
-    if (currmovie.score > bestMovie.score){
-        return currmovie;
-    }
-    return bestMovie;
-})
+// const highesRated = movies.reduce((bestMovie,currmovie) =>{
+//     if (currmovie.score > bestMovie.score){
+//         return currmovie;
+//     }
+//     return bestMovie;
+// })
 
-const even = [2,4,6,8];
-const mytotal = even.reduce((sum,num) => sum+num);
+// const even = [2,4,6,8];
+// const mytotal = even.reduce((sum,num) => sum+num);
 
 // const good_movies = movies.filter(m => {return m.score > 80;});
 // const goodTitle = good_movies.map(m => m.title )
@@ -406,7 +406,7 @@ const mytotal = even.reduce((sum,num) => sum+num);
 // }, 2000)
 
 
-const arr = [80,98,92,20,77,90,89,84,81,77];
+// const arr = [80,98,92,20,77,90,89,84,81,77];
 
 // // const sol = exams.some(score => score <= 20);
 
@@ -430,77 +430,120 @@ const arr = [80,98,92,20,77,90,89,84,81,77];
 //     }
 // }
 
-const total = arr.reduce((total , arr) => {
-    return total + arr
-} )
+// const total = arr.reduce((total , arr) => {
+//     return total + arr
+// } )
 
 
-const person = {
-    firstname: "Vigo",
-    lastname: 'Mortensen',
-    fullname: function() {
-        return `${this.firstname} ${this.lastname}`;
-    }
-}
+// const person = {
+//     firstname: "Vigo",
+//     lastname: 'Mortensen',
+//     fullname: function() {
+//         return `${this.firstname} ${this.lastname}`;
+//     }
+// }
 
 
-function rollDie(number) {
-    return Math.floor(Math.random() * number) + 1;
-}
+// function rollDie(number) {
+//     return Math.floor(Math.random() * number) + 1;
+// }
 
-const cats = ['blue', 'scout', 'rocket'];
-const dogs = ['Rusty', 'Wyatt'];
+// const cats = ['blue', 'scout', 'rocket'];
+// const dogs = ['Rusty', 'Wyatt'];
 
-const allpets = [...cats , ...dogs];
+// const allpets = [...cats , ...dogs];
 
-const feline = {legs:4, family:'Felidae'};
-const canine = {isfurry: true, family: "canine"}
+// const feline = {legs:4, family:'Felidae'};
+// const canine = {isfurry: true, family: "canine"}
 
 
 // spread with object
-const dataFromForm = {
-    email: 'blueman@gmail.com',
-    password: 'tobias123!',
-    username: 'tfunke',
-}
+// const dataFromForm = {
+//     email: 'blueman@gmail.com',
+//     password: 'tobias123!',
+//     username: 'tfunke',
+// }
 
-const newUser = {...dataFromForm, id:2345, isAdmin: false
-};
+// const newUser = {...dataFromForm, id:2345, isAdmin: false
+// };
 
 // to add numbers in array 
-function sum(...nums){
-    return nums.reduce((total, el) => total + el);
-}
+// function sum(...nums){
+//     return nums.reduce((total, el) => total + el);
+// }
 
-function raceResult(gold,silver, ...everyOneElse){
-    console.log(`Gold medals goes to : ${gold}`);
-    console.log(`Silver medals goes to : ${silver}`);
-    console.log(`And thanks everyone else : ${everyOneElse}`);
+// function raceResult(gold,silver, ...everyOneElse){
+//     console.log(`Gold medals goes to : ${gold}`);
+//     console.log(`Silver medals goes to : ${silver}`);
+//     console.log(`And thanks everyone else : ${everyOneElse}`);
 
-}
+// }
 
 
 // Destructing objects
 
-const user = {
-    email: 'harvey@gmail.com',
-    password: 'sjhicapcadf',
-    firstName: 'Harvey',
-    lastName: 'Milk',
-    born: 1930,
-    died: 1978,
-    bio: 'Harvey Bernard Milk was an American politician',
-    city: 'San Fransisco',
-    state: 'California'
-}
+// const user = {
+//     email: 'harvey@gmail.com',
+//     password: 'sjhicapcadf',
+//     firstName: 'Harvey',
+//     lastName: 'Milk',
+//     born: 1930,
+//     died: 1978,
+//     bio: 'Harvey Bernard Milk was an American politician',
+//     city: 'San Fransisco',
+//     state: 'California'
+// }
 
-const firstName = user.firstName;
-const lastName = user.lastName;
+// const firstName = user.firstName;
+// const lastName = user.lastName;
 
-const { email } = user;
+// const { email } = user;
 
-const high = movies.filter((movie) => movie.score >= 90);
+// const high = movies.filter((movie) => movie.score >= 90);
 
-movies.map(movie=> {
-    return `${movie.title} (${movie.year}) is rated ${movie.score}`;
+// movies.map(movie=> {
+//     return `${movie.title} (${movie.year}) is rated ${movie.score}`;
+// })
+
+// const btn = document.querySelector('#v2');
+
+// btn.onclick = function(){
+//     console.log("you clicked Me!");
+//     console.log("I hope it works");
+// }
+
+// function scream(){
+//     console.log("AAAAAAHHH");
+//     console.log("STOP TOUCHING ME!!");
+// }
+
+// btn.onmouseenter = scream;
+
+// document.querySelector('h1').onclick = function() {
+//     alert("You clicked the h1!");
+// }
+
+
+// const btn3 = document.querySelector('#v3');
+// btn3.addEventListener('click', scream)
+
+// function twist(){
+//     console.log("TWIST");
+// }
+// function shout(){
+//     console.log("SHOUT");
+// }
+
+// const buttontas = document.querySelector('#tas');
+
+// buttontas.onclick = shout;
+// buttontas.onclick = twist;
+
+
+const colorchanger = document.querySelector('#colorchanger');
+
+colorchanger.addEventListener('click' , function(){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    document.body.style.background = '#' + randomColor;
 })
+
