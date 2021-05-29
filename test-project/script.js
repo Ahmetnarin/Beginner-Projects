@@ -527,22 +527,24 @@
 // const btn3 = document.querySelector('#v3');
 // btn3.addEventListener('click', scream)
 
-// function twist(){
-//     console.log("TWIST");
-// }
-// function shout(){
-//     console.log("SHOUT");
-// }
+function twist(){
+    console.log("TWIST");
+}
+function shout(){
+    console.log("SHOUT");
+}
 
-// const buttontas = document.querySelector('#tas');
+const buttontas = document.querySelector('#tas');
 
 // buttontas.onclick = shout;
 // buttontas.onclick = twist;
 
+buttontas.addEventListener('click', twist)
+buttontas.addEventListener('click', shout)
 
 const colorchanger = document.querySelector('#colorchanger');
 
-colorchanger.addEventListener('click' , function(){
+colorchanger.c('click' , function(){
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
     document.body.style.background = '#' + randomColor;
 })
