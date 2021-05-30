@@ -3,3 +3,11 @@
 * {
   box-sizing: border-box;
 }
+
+.winner {
+  color : green;
+}
+
+.loser {
+  color : red;
+}
