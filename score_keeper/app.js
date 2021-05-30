@@ -6,23 +6,44 @@ const p2Display = document.querySelector("#p2Display");
 
 let p1Score = 0;
 let p2Score = 0;
+let winningScore = 5;
 
 
 p1Button.addEventListener('click', function () {
-    p1Score += 1;
-    p1Display.textContent = p1Score;
+    if (p1Score !== winningScore){
+        p1Score += 1;
+        p1Display.textContent = p1Score;
+
+    }else {
+        p1Button.disabled = true;
+        p2Button.disabled = true;
+    }
+    
 })
 
 
 p2Button.addEventListener('click', function () {
-    p2Score += 1;
-    p2Display.textContent = p2Score;
+    if(p2Score !== winningScore){
+        p2Score += 1;
+        p2Display.textContent = p2Score;
+    }else {
+        p1Button.disabled = true;
+        p2Button.disabled = true;
+    }
+    
 })
 
 reset.addEventListener('click', function () {
-    p1Score = 0 ;
-    p2Score = 0 ;
-    p1Display.textContent = p1Score;
-    p2Display.textContent = p2Score;
+    // if(reset){
+        p1Score = 0;
+        p2Score = 0;
+        p1Display.textContent = p1Score;
+        p2Display.textContent = p2Score;
+        p1Button.disabled = false;
+        p2Button.disabled = false;
+
+
+    // }
+    
 
 })
