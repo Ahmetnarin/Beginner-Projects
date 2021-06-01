@@ -1,5 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
+:root {
+  --color-white: #f3f3f3;
+  --color-darkblue: #1b1b32;
+  --color-darkblue-alpha: rgba(27,27,50,0.8);
+  --color-green: #37af65;
+}
+
+
 * {
   box-sizing: border-box;
+  
 }
+
+body {
+  /* font-family: 'Popins';
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4; */
+  /* color:var(--color-white); */
+  /* margin: 0; */
+  background-color: red;
+
+}
+
+.container {
+  margin: auto;
+}
+
+h1 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+
+
+
