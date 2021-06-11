@@ -90,7 +90,7 @@
 //         console.log("You quit!");
 //         break;
 //     } 
-    
+
 // }
 // if (parseInt(guess) === targetNum && guess !== 'q') {
 //     console.log(`You got it! It took you ${attemps} guesses!`)
@@ -527,25 +527,143 @@
 // const btn3 = document.querySelector('#v3');
 // btn3.addEventListener('click', scream)
 
-function twist(){
-    console.log("TWIST");
-}
-function shout(){
-    console.log("SHOUT");
-}
+// function twist(){
+//     console.log("TWIST");
+// }
+// function shout(){
+//     console.log("SHOUT");
+// }
 
-const buttontas = document.querySelector('#tas');
+// const buttontas = document.querySelector('#tas');
 
 // buttontas.onclick = shout;
 // buttontas.onclick = twist;
 
-buttontas.addEventListener('click', twist)
-buttontas.addEventListener('click', shout)
+// buttontas.addEventListener('click', twist)
+// buttontas.addEventListener('click', shout)
 
-const colorchanger = document.querySelector('#colorchanger');
+// const colorchanger = document.querySelector('#colorchanger');
 
-colorchanger.c('click' , function(){
-    var randomColor = Math.floor(Math.random()*16777215).toString(16);
-    document.body.style.background = '#' + randomColor;
-})
+// colorchanger.c('click' , function(){
+//     var randomColor = Math.floor(Math.random()*16777215).toString(16);
+//     document.body.style.background = '#' + randomColor;
+// })
 
+
+// const login = async (username, password) => {
+//     if(!username || !password) throw 'Missing Credentials'
+//     if(password=== 'corgifeetarecute') return 'Welcome'
+//     throw 'Invalid Password'
+// }
+
+// login('aksfdsfs' , 'corgifeetarecute')
+//     .then(msg => {
+//         console.log("Logged in!")
+//         console.log(msg)
+//     } )
+//     .catch(err => {
+//         console.log("ERROR!")
+//         console.log(err)
+//     })
+
+// const delayedColorChange = (color, delay) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             document.body.style.backgroundColor = color;
+//             resolve();
+//         }, delay)
+//     })
+// }
+
+
+// delayedColorChange('red', 1000)
+//     .then(() => delayedColorChange('orange', 1000))
+//     .then(() => delayedColorChange('yellow', 1000))
+//     .then(() => delayedColorChange('green', 1000))
+//     .then(() => delayedColorChange('blue', 1000))
+//     .then(() => delayedColorChange('indigo', 1000))
+//     .then(() => delayedColorChange('violet', 1000))
+
+
+
+// async function rainbow() {
+//     await delayedColorChange('red', 1000);
+//     // console.log("HI!!");
+//     await delayedColorChange('orange', 1000);
+//     await delayedColorChange('yellow', 1000);
+//     await delayedColorChange('green', 1000);
+//     await delayedColorChange('blue', 1000);
+//     await delayedColorChange('indigo', 1000);
+//     await delayedColorChange('violet', 1000);
+//     return "All Done!"
+// }
+
+// rainbow().then(() => console.log("End of Rainbow!") )
+
+// const req = new XMLHttpRequest();
+
+// req.onload = function() {
+//     console.log("ALL DONE WITH REQUEST!!")
+//     // console.log(this);
+//     const data = JSON.parse(this.responseText);
+//     console.log("How many btc can I buy for $50000?")
+//     console.log(50000 / data.ticker.price)
+// }
+
+// req.onerror = function() {
+//     console.log("ERROR!!")
+//     console.log(this);
+// }
+
+// req.open("GET", "https://api.cryptonator.com/api/full/btc-usd");
+// req.send();
+
+// fetch("https://api.cryptonator.com/api/full/btc-usd")
+//     .then(res=> {
+//         console.log("RESPONSE, WAITING TO PARSE...", res)
+//         return res.json();
+//     })
+//     .then(data =>{
+//         console.log("DATA PARSED...", data)
+//         console.log(data.ticker.price)
+//     })
+//     .catch(e => {
+//         console.log("OH NO! ERROR!" , e)
+//     })
+
+
+
+// const fetchBitcoinPrice = async () => {
+//     const res = await fetch("https://api.cryptonator.com/api/full/btc-usd");
+//     const data = await res.json();
+//     console.log(data.ticker.price)
+// }
+
+// axios.get('https://api.cryptonator.com/api/full/btc-usd')
+//     .then(res => {
+//         console.log("The price of Bitcoin is:")
+//         console.log(res.data.ticker.price)
+//     })
+//     .catch(err => {
+//         console.log("ERROR!",err)
+//     })
+
+// const fetchBitcoinPrice = async () => {
+//     try {
+//         const res = await axios.get("https://api.cryptonator.com/api/full/btc-usd")
+//         console.log(res.data.ticker.price)
+//     } catch (e) {
+//         console.log("Error!", e)
+//     }
+// }  
+
+const jokes = document.querySelector("#jokes");
+
+const getDadJoke = async () => {
+    const config = {headers: { Accept: 'application/json'}}
+    const res = await axios.get('https://icanhazdadjoke.com/', config)
+    console.log(res.data.joke)
+    const newLI = document.createElement('LI');
+    newLI.append(res.data.joke);
+    jokes.append(newLI);
+}
