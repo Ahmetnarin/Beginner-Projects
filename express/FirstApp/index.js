@@ -10,12 +10,11 @@ const app = express();
 
 
 app.get('/',  (req, res) => {
-    console.log("THIS IS MY HOME PAGE!!");
-    res.send('THIS IS MY HOME PAGE!!!!');
+    res.send("Welcome to the home page!")
 })
 app.get('/cats',  (req, res) => {
-    console.log("CAT REQUEST!!!");
-    res.send('MEOW!!');
+    console.log("CAT REQUEST!!!!!");
+    res.send('MEOW!!!!');
 })
 
 
