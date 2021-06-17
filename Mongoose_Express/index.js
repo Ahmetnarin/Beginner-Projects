@@ -35,15 +35,12 @@ app.get('/products/new' ,  (req, res) => {
     res.render('products/new', { categories })
 })
 
-// I want to delete a product 
-// app.get('/products/delete' , async (req, res) => {
-//     const products = await Product.find({})
-//     // db.products.remove({ products })
-//         // db.products.remove({ qty: { $gt: 20 } })
-//     console.log(products)
-//     res.render('products/delete', { products })
-    
-// })
+app.delete('/products/:id' , async (req, res) => {
+    const { id } = req.params;
+    const deletedProduct = await Product.findByIdAndDelete(id);
+    res.redirect('/products');
+
+})
 
 app.get('/products/:id', async (req, res) => {
     const { id }  = req.params; 
