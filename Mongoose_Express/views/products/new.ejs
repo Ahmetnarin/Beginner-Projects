@@ -15,9 +15,12 @@
         <input type="number" id="price" name="price" placeholder="unit of product" min='0' required>
         <label for="category"></label>
         <select name="category" id="catergory">
-            <option value="fruit">Fruit</option>
+            <% for(let category of categories){ %>
+                <option value="<%=category %>"><%=category%></option>
+            <% } %> 
+            <!-- <option value="fruit">Fruit</option>
             <option value="vegetable">Vegetable</option>
-            <option value="dairy">Dairy</option>
+            <option value="dairy">Dairy</option> -->
         </select>
         <button>Submit</button>
     </form>

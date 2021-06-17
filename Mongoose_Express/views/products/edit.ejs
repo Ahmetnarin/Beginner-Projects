@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Product</title>
 </head>
+
 <body>
     <h1>Edit Product</h1>
     <form action="/products/<%= product._id %>/?_method=PUT" method="POST">
@@ -15,11 +17,16 @@
         <input type="number" id="price" name="price" placeholder="price" min='0' value="<%= product.price %>" required>
         <label for="category"></label>
         <select name="category" id="catergory">
-            <option value="fruit">Fruit</option>
-            <option value="vegetable">Vegetable</option>
-            <option value="dairy">Dairy</option>
+            <% for(let category of categories){ %>
+                <option value="<%=category %>" <%= product.category===category ? 'selected' : '' %>>
+                    <%=category%>
+                </option>
+                <% } %>
         </select>
         <button>Submit</button>
     </form>
+
+    <input type="button" onclick="location.href='/products/<%= product._id %>';" value="BACK" />
 </body>
+
 </html>
