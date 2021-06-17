@@ -23,6 +23,8 @@ app.get('/products', async (req, res) => {
     console.log(products)
     res.render('products/index' , { products })
 })
+
+
 app.get('/products/new' , (req, res) => {
     res.render('products/new')
 })
@@ -32,6 +34,12 @@ app.get('/products/:id', async (req, res) => {
     const product  = await Product.findById(id);
     console.log(product);
     res.render('products/show', { product } );
+})
+
+app.get('/products/:id/edit' , async (req,res) => {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    res.render('products/edit', { product });
 })
 
 // poster
