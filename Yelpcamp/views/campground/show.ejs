@@ -12,12 +12,16 @@
     <h1><%= campground.title %> </h1>
     <h2><%= campground.location %> </h2>
 
+    <form action="/campground/<%= campground._id %>?_method=DELETE" method="POST">
+        <button style="background-color: red;">DELETE</button>
+    </form>
+
+
 
     
     <footer>
         <input type="button" onclick="location.href='/campground/<%=campground._id %>/edit';" value="EDIT" />
         <input type="button" onclick="location.href='/campground';" value="GO BACK" />
     </footer>
-
 </body>
 </html>

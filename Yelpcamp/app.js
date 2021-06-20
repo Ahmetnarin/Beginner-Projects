@@ -75,6 +75,12 @@ app.get('/makecampground' , async (req,res) => {
     res.send(camp);
 })
 
+app.delete('/campground/:id', async (req , res) => {
+    const {id} = req.params;
+    await Campground.findByIdAndDelete(id);
+    res.redirect('/campground');
+})
+
 
 
 app.listen(3000, () => {
