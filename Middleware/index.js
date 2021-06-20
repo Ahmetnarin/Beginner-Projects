@@ -4,15 +4,26 @@ const morgan = require("morgan");
 
 
 
-app.use(morgan('common'));
+app.use(morgan('tiny'));
 app.use((req, res, next) => {
-    console.log("THIS IS MY FIRST MIDDLEWARE");
-    next();
+    console.log(req.method.toUpperCase(), req.pathWOOF);
+    next()
 })
-app.use((req, res, next) => {
-    console.log("THIS IS MY SECOND MIDDLEWARE");
-    next();
-})
+
+
+
+
+
+
+
+// app.use((req, res, next) => {
+//     console.log("THIS IS MY FIRST MIDDLEWARE");
+//     next();
+// })
+// app.use((req, res, next) => {
+//     console.log("THIS IS MY SECOND MIDDLEWARE");
+//     next();
+// })
 
 app.get("/" , (req, res) => {
     res.send("Home Page!");
