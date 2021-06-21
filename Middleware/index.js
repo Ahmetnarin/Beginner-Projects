@@ -11,6 +11,14 @@ app.use((req, res, next) => {
     next();
 })
 
+app.use((req, res, next) => {
+    const {password} = req.query;
+    if(password === 'helloworld'){
+        next();
+    }
+    res.send("SORRY IT IS WRONG!!");
+})
+
 
 app.get("/" , (req, res) => {
     console.log(`REQUEST DATE: ${req.requestTime}`);
