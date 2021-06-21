@@ -1,20 +1,25 @@
 <% layout('layouts/boilerplate') %>
-    <form action="/campground" method="POST">
-        <div>
-            <label for="title">Title</label>
-            <input type="text" id="title" name="campground[title]">
-        </div>
-        <div>
-            <label for="location">Location</label>
-            <input type="text" id="location" name="campground[location]">
-        </div>
-        
-    </form>
+<div class="row">
+    <h1 class="text-center">New Campground</h1>
+    <div class="col-6 offset-3">
+        <form action="/campground" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="campground[title]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="campground[location]">
+            </div>
+        </form>
+        <footer>
+            <button class="btn-success mt-2">Add Campground</button>
+            <input class="btn-primary" type="button" onclick="location.href='/campground';" value="GO BACK" />
+        </footer>
 
-    <footer>
-        <button>Add Campground</button>
-        <input type="button" onclick="location.href='/campground';" value="GO BACK" />
-        <!-- <input type="button" onclick="location.href='/campground';" value="GO BACK" /> -->
-    </footer>
-    
+    </div>
+</div>
+
+
+
 
