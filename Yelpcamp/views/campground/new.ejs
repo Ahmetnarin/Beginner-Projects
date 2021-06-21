@@ -1,29 +1,29 @@
 <% layout('layouts/boilerplate') %>
-<div class="row">
-    <h1 class="text-center">New Campground</h1>
-    <div class="col-6 offset-3">
-        <form action="/campground" method="POST">
-            <div class="mb-3">
-                <label class="form-label" for="title">Title</label>
-                <input class="form-control" type="text" id="title" name="campground[title]">
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="location">Location</label>
-                <input class="form-control" type="text" id="location" name="campground[location]">
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="image">Image URL</label>
-                <input class="form-control" type="text" id="image" name="campground[image]">
-            </div>
-        </form>
-        <footer class="text-center">
-            <button class="btn-success mt-2">Add Campground</button>
-            <input class="btn-primary" type="button" onclick="location.href='/campground';" value="GO BACK" />
-        </footer>
-
+    <div class="row">
+        <h1 class="text-center">New Campground</h1>
+        <div class="col-6 offset-3">
+            <form action="/campground" method="POST">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="campground[title]">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="campground[location]">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">Image URL</label>
+                    <input class="form-control" type="text" id="image" name="campground[image]">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" name="campground[description]" id="description" type="text"
+                        id="description" cols="30" rows="10"></textarea>
+                </div>
+            </form>
+            <footer class="text-center">
+                <button class="btn-success mt-2">Add Campground</button>
+                <input class="btn-primary" type="button" onclick="location.href='/campground';" value="GO BACK" />
+            </footer>
+        </div>
     </div>
-</div>
-
-
-
-
