@@ -2,8 +2,11 @@ const express = require('express');
 const path = require("path");
 const mongoose = require("mongoose"); 
 const ejsMate = require('ejs-mate');
+const { CampGroundSchema , reviewSchema } = require("./schemas.js")
+const catchAsync = require("./utils/catchAsync");
 const methodoverride = require("method-override");
 const Campground = require("./models/campground");
+const Review = require('./models/review')
 
 
 mongoose.connect('mongodb://localhost:27017/yelp-camp', {
@@ -27,7 +30,17 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: true}));
-app.use(methodoverride('_method'))
+app.use(methodoverride('_method'));
+
+const validateReview = (req, res, next) => {
+    const { error } = reviewSchema.validate(req.body);
+    if(error){
+        const msg = error.details.map(el => el.message).join(',');
+        throw new ExpressError(msg, 400);
+    } else {
+        next();
+    }
+}
 
 app.get('/' , (req,res) => {
     res.render('home');
@@ -54,10 +67,11 @@ app.post("/campground", async (req, res) => {
     
 })
 
-app.get('/campground/:id', async (req, res) => {
-    const campground = await Campground.findById(req.params.id);
+app.get('/campground/:id', catchAsync( async (req, res) => {
+    const campground = await Campground.findById(req.params.id).populate('reviews');
+    console.log(campground);
     res.render('campground/show' , { campground });
-})
+}))
 
 //////////////////////////////////////////////////////////////
 app.get('/campground/:id/edit' , async (req,res) => {
@@ -87,6 +101,15 @@ app.delete('/campground/:id', async (req , res) => {
     await Campground.findByIdAndDelete(id);
     res.redirect('/campground');
 })
+
+app.post('/campground/:id/reviews' , validateReview ,catchAsync(async(req, res) => {
+    const campground = await Campground.findById(req.params.id);
+    const  review = new Review(req.body.review);
+    campground.reviews.push(review);
+    await review.save();
+    await campground.save();
+    res.redirect(`/campground/${campground._id}`);
+}))
 
 app.use((err, req, res, next) => {
     res.send('OH boy, sthg went wrong!!');
