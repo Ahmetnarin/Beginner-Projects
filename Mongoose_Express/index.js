@@ -9,6 +9,7 @@ const AppError = require('./AppError');
 const Product = require("./models/product");
 const Farm = require('./models/farm');
 // const { EWOULDBLOCK } = require('constants');
+const categories = ['fruit', 'vegetable', 'dairy'];
 
 mongoose.connect('mongodb://localhost:27017/farmStandTake2', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -38,13 +39,10 @@ app.get('/farms/new', (req, res) => {
 })
 
 app.get('/farms/:id', async (req, res) => {
-    const farm = await Farm.findById(req.params.id);
+    const farm = await Farm.findById(req.params.id).populate('products');
     res.render('farms/show', { farm })
 })
 
-app.get('/farms/show' , async (req, res) => {
-    res.send(req.body);
-})
 
 
 
@@ -55,16 +53,25 @@ app.post('/farms', async (req, res) => {
     res.redirect('/farms')
 })
 
-app.post("/farms", async (req , res) => {
-    const farm = new Farm(req.body);
-    await farm.save();
-    res.redirect('/farms');
+app.get("/farms/:id/products/new", (req, res) => {
+    const { id } = req.params;
+    res.render('products/new', { categories, id })
 })
 
+app.post('/forms/:id/products', async (req, res) => {
+    const { id } = req.params;
+    const farm = await Farm.findByID(id);
+    // console.log(res.send())
+    const { name , price, category } = req.body;
+    const product = new Product({ name, price, category })
+    farm.products.push(product);
+    product.farm = farm;
+    await farm.save();
+    await product.save();
+    res.redirect(`/farms/${id}`)
+})
 
 // PRODUCT ROUTES
-const categories = ['fruit', 'vegetable', 'dairy'];
-
 app.get('/products', async (req, res) => {
     const products = await Product.find({})
     console.log(products)
