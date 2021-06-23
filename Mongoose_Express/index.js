@@ -7,8 +7,10 @@ const AppError = require('./AppError');
 
 
 const Product = require("./models/product");
+const Farm = require('./models/farm');
+// const { EWOULDBLOCK } = require('constants');
 
-mongoose.connect('mongodb://localhost:27017/farmStand', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/farmStandTake2', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("MONGO CONNECTION OPEN");
     })
@@ -26,12 +28,37 @@ app.use(methodOverride('_method'));
 
 // FARM ROUTES
 
-app.get('/farms/new', (req, res)=> {
+app.get('/farms', async (req, res) => {
+    const farms = await Farm.find({});
+    res.render('farms/index', { farms })
+})
+
+app.get('/farms/new', (req, res) => {
     res.render('farms/new');
 })
 
-app.post('/farms', async (req, res) => {
+app.get('/farms/:id', async (req, res) => {
+    const farm = await Farm.findById(req.params.id);
+    res.render('farms/show', { farm })
+})
+
+app.get('/farms/show' , async (req, res) => {
     res.send(req.body);
+})
+
+
+
+
+app.post('/farms', async (req, res) => {
+    const farm = new Farm(req.body);
+    await farm.save();
+    res.redirect('/farms')
+})
+
+app.post("/farms", async (req , res) => {
+    const farm = new Farm(req.body);
+    await farm.save();
+    res.redirect('/farms');
 })
 
 
