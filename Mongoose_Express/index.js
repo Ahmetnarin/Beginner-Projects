@@ -19,10 +19,23 @@ mongoose.connect('mongodb://localhost:27017/farmStand', { useNewUrlParser: true,
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'));
 
+// FARM ROUTES
 
+app.get('/farms/new', (req, res)=> {
+    res.render('farms/new');
+})
+
+app.post('/farms', async (req, res) => {
+    res.send(req.body);
+})
+
+
+// PRODUCT ROUTES
 const categories = ['fruit', 'vegetable', 'dairy'];
 
 app.get('/products', async (req, res) => {
