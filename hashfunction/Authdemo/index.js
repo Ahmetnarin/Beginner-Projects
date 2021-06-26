@@ -3,6 +3,8 @@ const app = express();
 const User = require('./models/user');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const session = required('express-session');
+
 
 mongoose.connect('mongodb://localhost:27017/authDemo', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -18,6 +20,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use(express.urlencoded({ extended: true }));
+app.use(session({secret: 'notagoodsecret'}));
 
 app.get('/', (req, res) => {
     res.send("THIS IS THE HOMEPAGE!!")
@@ -50,6 +53,7 @@ app.post('/login', async (req, res) => {
     const user = await User.findOne({ username })
     const validPassword = await bcrypt.compare(password, user.password)
     if (validPassword) {
+        req.session.user_id = user._id;
         res.send("Welcome!")
     } else {
         res.send("Incorrect username or password! Try again...");
@@ -59,7 +63,6 @@ app.post('/login', async (req, res) => {
 
 app.get('/secret', (req, res) => {
     res.send('THIS IS SECRET! YOU CANNOT SEE ME UNLESS YOU ARE LOGGED IN!');
-
 })
 
 app.listen(3000, () => {
