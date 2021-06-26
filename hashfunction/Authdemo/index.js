@@ -14,32 +14,46 @@ mongoose.connect('mongodb://localhost:27017/authDemo', { useNewUrlParser: true, 
     })
 
 
-app.set('view engine' , 'ejs');
-app.set('views' , 'views');
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 
-app.use(express.urlencoded({extended : true}));
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/' , (req, res) =>{ 
+app.get('/', (req, res) => {
     res.send("THIS IS THE HOMEPAGE!!")
 })
 
-app.get('/register' , (req, res) => {
+app.get('/register', (req, res) => {
     res.render('register');
 })
 
-app.get('/after_reg' , (req, res) => {
+app.get('/after_reg', (req, res) => {
     res.render("after_reg")
 })
 
 app.post("/register", async (req, res) => {
-    const {password , username} = req.body;
-    const hash = await bcrypt.hash(password , 12);
+    const { password, username } = req.body;
+    const hash = await bcrypt.hash(password, 12);
     const user = new User({
-        username, 
+        username,
         password: hash
     })
     await user.save();
-    res.redirect('/after_reg')
+    res.redirect('/')
+})
+
+app.get('/login', (req, res) => {
+    res.render('login')
+})
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username })
+    const validPassword = await bcrypt.compare(password, user.password)
+    if (validPassword) {
+        res.send("Welcome!")
+    } else {
+        res.send("Incorrect username or password! Try again...");
+    }
 })
 
 
