@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const User = require('./models/user');
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 mongoose.connect('mongodb://localhost:27017/authDemo', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -18,12 +19,27 @@ app.set('views' , 'views');
 
 app.use(express.urlencoded({extended : true}));
 
+app.get('/' , (req, res) =>{ 
+    res.send("THIS IS THE HOMEPAGE!!")
+})
+
 app.get('/register' , (req, res) => {
     res.render('register');
 })
 
+app.get('/after_reg' , (req, res) => {
+    res.render("after_reg")
+})
+
 app.post("/register", async (req, res) => {
-    res.send(req.body);
+    const {password , username} = req.body;
+    const hash = await bcrypt.hash(password , 12);
+    const user = new User({
+        username, 
+        password: hash
+    })
+    await user.save();
+    res.redirect('/after_reg')
 })
 
 
